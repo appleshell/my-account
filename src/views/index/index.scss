@@ -1,0 +1,24 @@
+.side-bar{
+  height: 100vh;
+  border-right: 1px solid #ddd;
+}
+.logo{
+  height: 64px;
+  padding:4px;
+  text-align: center;
+  border-bottom:1px solid #ddd;
+}
+.logo img{
+  height: 100%;
+}
+.ant-layout-sider{
+  background-color: #fff !important;
+}
+.main-warpper{
+  height: calc(100vh - 64px);
+  overflow-y: auto;
+  padding:12px;
+}
+.trigger{
+  color:#fff;
+}

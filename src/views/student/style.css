@@ -1,0 +1,13 @@
+.student {
+  background-color: #fff;
+}
+.searchForm{
+  padding:12px;
+}
+.searchForm .ant-input{
+  width:200px;
+  margin-right:16px;
+}
+.searchForm .ant-btn{
+  margin-right:16px;
+}

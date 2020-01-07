@@ -3,18 +3,34 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "antd": "^3.19.1",
+    "array-move": "^2.1.0",
+    "axios": "^0.18.0",
+    "moment": "^2.24.0",
+    "node-sass": "^4.12.0",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
-    "react-scripts": "3.0.1"
+    "react-flip-clock": "^1.0.4",
+    "react-redux": "^7.1.0",
+    "react-router": "^5.0.1",
+    "react-router-dom": "^5.0.1",
+    "react-scripts": "3.0.1",
+    "react-sortable-hoc": "^1.9.1",
+    "redux": "^4.0.1"
   },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "lint": "eslint src --ext .js,.jsx --fix"
   },
   "eslintConfig": {
-    "extends": "react-app"
+    "extends": "react-app",
+    "rules": {
+      "jsx-ally/anchor-is-valid": "off",
+      "no-script-url": "off"
+    }
   },
   "browserslist": {
     "production": [
@@ -27,5 +43,9 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "eslint": "^5.16.0",
+    "eslint-plugin-react": "^7.13.0"
   }
 }
