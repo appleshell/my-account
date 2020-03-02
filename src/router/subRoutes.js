@@ -8,9 +8,9 @@ import Learn from '../views/learn/learn'
 const Routes = e => {
   return (
     <Switch>
-      <Route path="/student" component={Student}/>
-      <Route exact path="/sortable" component={Sortable}/>
-      <Route exact path="/learn" component={Learn}/>
+      <Route path="/student" component={Student} />
+      <Route exact path="/sortable" component={Sortable} />
+      <Route exact path="/learn" component={Learn} />
     </Switch>
   )
 }
