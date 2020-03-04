@@ -1,5 +1,5 @@
 import React from 'react'
-import './style'
+import './style.scss'
 
 export interface IEmptyLineProps {
   height?: number

@@ -1,40 +1,17 @@
 import React from 'react'
 import { Layout, Menu, Icon } from 'antd'
 import './index.scss'
-import moment from 'moment'
+import { History } from 'history'
 import SubRoutes from '../../router/subRoutes'
+import Clock from './components/Clock'
 const { Header, Sider, Content } = Layout
 const { SubMenu } = Menu
 
-class Clock extends React.Component {
-  constructor(props) {
-    super(props)
-    this.state = { date: new Date() }
-  }
-
-  componentDidMount() {
-    this.timerID = setInterval(() => this.tick(), 1000)
-  }
-  componentWillUnmount() {
-    clearInterval(this.timerID)
-  }
-  tick() {
-    this.setState({
-      date: new Date(),
-    })
-  }
-  render() {
-    return (
-      <div style={{ float: 'right' }}>
-        <h2 style={{ color: '#fff', fontSize: '16px' }}>
-          {moment(this.state.date).format('YYYY-MM-DD HH:mm:ss')}
-        </h2>
-      </div>
-    )
-  }
+interface IProps {
+  history: History
 }
 
-class App extends React.Component {
+class App extends React.Component<IProps> {
   state = {
     collapsed: false,
   }
@@ -44,7 +21,7 @@ class App extends React.Component {
       collapsed: !this.state.collapsed,
     })
   }
-  onMenuHandle = e => {
+  onMenuHandle = (e:any) => {
     console.log(e)
     const path = e.key
     this.props.history.push(`/${path}`)
@@ -57,7 +34,7 @@ class App extends React.Component {
             <img src="https://gw.alipayobjects.com/zos/rmsportal/KDpgvguMpGfqaHPjicRK.svg" alt="" />
           </div>
           <Menu theme="light" mode="inline" onClick={this.onMenuHandle}>
-            <Menu.Item key="student" path="student">
+            <Menu.Item key="student">
               <Icon type="user" />
               <span>nav 1</span>
             </Menu.Item>
@@ -70,7 +47,9 @@ class App extends React.Component {
               <span>nav 3</span>
             </Menu.Item>
             <SubMenu key="com-ui" title="组件">
-              <Menu.Item></Menu.Item>
+              <Menu.Item key="empty-line">
+                <span>空行</span>
+              </Menu.Item>
             </SubMenu>
           </Menu>
         </Sider>

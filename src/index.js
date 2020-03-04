@@ -3,7 +3,8 @@ import ReactDOM from 'react-dom';
 import { LocaleProvider } from 'antd'
 import zh_CN from 'antd/lib/locale-provider/zh_CN'
 import Routes from './router'
-import './index.css';
+import './assets/style/index.css';
+import './assets/style/reset.css'
 
 
 
