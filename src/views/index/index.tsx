@@ -15,13 +15,13 @@ class App extends React.Component<IProps> {
   state = {
     collapsed: false,
   }
-  componentLists = ['EmptyLine,空行']
+  componentLists = ['EmptyLine,空行', 'Button,按钮']
   toggle = () => {
     this.setState({
       collapsed: !this.state.collapsed,
     })
   }
-  onMenuHandle = (e:any) => {
+  onMenuHandle = (e: any) => {
     console.log(e)
     const path = e.key
     this.props.history.push(`/${path}`)
@@ -47,9 +47,10 @@ class App extends React.Component<IProps> {
               <span>nav 3</span>
             </Menu.Item>
             <SubMenu key="com-ui" title="组件">
-              <Menu.Item key="empty-line">
-                <span>空行</span>
-              </Menu.Item>
+              {this.componentLists.map(item => {
+                const comInfo = item.split(',')
+                return <Menu.Item key={comInfo[0]}>{comInfo[1]}</Menu.Item>
+              })}
             </SubMenu>
           </Menu>
         </Sider>
