@@ -1,0 +1,38 @@
+@charset "utf-8";
+@import '../theme.scss';
+
+a, button {
+  color: $primaryColor;
+  border: none;
+  background: transparent;
+  outline: none;
+  padding: 0;
+  display: inline;
+  -webkit-appearance: none;
+  &:active {
+    opacity: .7;
+  }
+}
+
+.x-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  width: px(100);
+  height: px(40);
+  font-size: px(16);
+  border-radius: px($buttonRadius);
+  white-space: nowrap;
+  user-select: none;
+  &:active {
+    opacity: 1;
+  }
+  &--primary {
+    background: $primaryColor;
+    color: #fff;
+    &:active {
+      background: rgb(4, 178, 130)
+    }
+  }
+}
