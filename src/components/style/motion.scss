@@ -1,0 +1,18 @@
+@keyframes loadingCircle {
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.loading-spin {
+  display: inline-block;
+  // animation: name duration timing-function delay iteration-count direction fill-mode;
+  animation: loadingCircle 1s infinite linear;
+}
+
+.loading-icon {
+  margin-right: 8px;
+  svg {
+    vertical-align: middle;
+  }
+}

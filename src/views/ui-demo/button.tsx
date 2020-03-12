@@ -30,6 +30,9 @@ const Demo = () => (
     <h2>加载中按钮</h2>
     <p>设置loading属性，按钮不可点击</p>
     <Button loading={true}>确定</Button>
+    <Button loading={true} type="default">确定</Button>
+    <Button loading={true} type="warning">确定</Button>
+    <Button loading={true} type="default" size="small">确定</Button>
   </div>
 )
 
