@@ -1,7 +1,7 @@
 import React from 'react'
 import EmptyLine from '../../components/empty-line'
 
-const Demo = () => (
+const Demo: React.FC = () => (
   <div>
     <h1 style={{ fontSize: '24px' }}>组件名称：空行（EmptyLine）</h1>
     <h2 style={{ fontSize: '20px' }}>基础用法</h2>

@@ -6,6 +6,7 @@ import Sortable from '../views/sortable'
 import Learn from '../views/learn/learn'
 import EmptyLine from '../views/ui-demo/empty_line'
 import Button from '../views/ui-demo/button'
+import Layout from '../views/ui-demo/layout'
 
 const Routes = e => {
   return (
@@ -15,6 +16,7 @@ const Routes = e => {
       <Route exact path="/learn" component={Learn} />
       <Route exact path="/emptyLine" component={EmptyLine} />
       <Route exact path="/button" component={Button} />
+      <Route exact path="/layout" component={Layout} />
     </Switch>
   )
 }

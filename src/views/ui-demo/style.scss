@@ -12,4 +12,19 @@
     margin-right: 8px;
     margin-bottom: 12px;
   }
+  &-layout {
+    height: 100%;
+    .base-layout {
+      height: 300px;
+      .x-app--header {
+        background: #63da55;
+      }
+      .x-app--main {
+        background: #57ee47;
+      }
+      .x-app--footer {
+        background: #63da55;
+      }
+    }
+  }
 }

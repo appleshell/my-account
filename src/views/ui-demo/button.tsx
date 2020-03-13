@@ -2,7 +2,7 @@ import React from 'react'
 import Button from '../../components/button'
 import './style.scss'
 
-const Demo = () => (
+const Demo: React.FC = () => (
   <div className="component-demo">
     <h1>组件名称：按钮（Button）</h1>
 
