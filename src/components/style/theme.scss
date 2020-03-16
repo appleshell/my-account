@@ -3,6 +3,7 @@ $warningColor: rgb(247, 168, 49);
 $dangerColor: rgb(255, 89, 73);
 $buttonRadius: 4;
 $background: #fff; // layout 背景色
+$borderColor: rgb(235, 235, 238) !default; // input、cell的边的颜色
 
 @function px($px) {
   @return $px * 1px

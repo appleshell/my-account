@@ -1,0 +1,18 @@
+@charset "utf-8";
+@import '../style/index.scss';
+
+.x-input {
+  height: px(40);
+  width: px(200);
+  border: 1px solid $borderColor;
+  border-radius: px($buttonRadius);
+  padding: 0 10px;
+  transition: all .2s ease-out;
+  &:focus {
+    border-color: $primaryColor;
+    box-shadow: 0 0 4px $primaryColor;
+  }
+  &--mini {
+    height: px(32);
+  }
+}
