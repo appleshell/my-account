@@ -2,17 +2,53 @@
 @import '../style/index.scss';
 
 .x-input {
+  display: flex;
+  // align-items: center;
   height: px(40);
   width: px(200);
+  padding: 0 6px;
   border: 1px solid $borderColor;
   border-radius: px($buttonRadius);
-  padding: 0 10px;
   transition: all .2s ease-out;
-  &:focus {
+  &:focus-within {
     border-color: $primaryColor;
     box-shadow: 0 0 4px $primaryColor;
   }
+  .x-input--ipt {
+    border: none;
+    width: 100%;
+    height: 100%;
+    padding: 0 4px;
+    border-radius: px($buttonRadius);
+  }
+  &--disabled {
+    background: rgb(235, 235, 228);
+    cursor: not-allowed;
+    .x-input--ipt {
+      cursor: not-allowed;
+    }
+  }
   &--mini {
     height: px(32);
+  }
+  &__addon-before,
+  &__addon-after {
+    height: 100%;
+    display: flex;
+    align-items: center;
+  }
+  &--clearIcon {
+    height: 100%;
+    font-size: 20px;
+    display: flex;
+    align-items: center;
+    color: #ccc;
+    cursor: pointer;
+    &:hover {
+      color: #999999;
+    }
+    &:active {
+      color: #666;
+    }
   }
 }
