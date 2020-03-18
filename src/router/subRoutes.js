@@ -8,6 +8,7 @@ import EmptyLine from '../views/ui-demo/empty_line'
 import Button from '../views/ui-demo/button'
 import Layout from '../views/ui-demo/layout'
 import Input from '../views/ui-demo/input'
+import Divider from '../views/ui-demo/divider'
 
 const Routes = e => {
   return (
@@ -19,6 +20,7 @@ const Routes = e => {
       <Route exact path="/button" component={Button} />
       <Route exact path="/layout" component={Layout} />
       <Route exact path="/input" component={Input} />
+      <Route exact path="/divider" component={Divider} />
     </Switch>
   )
 }
