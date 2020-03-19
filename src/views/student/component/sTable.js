@@ -5,8 +5,8 @@ class STable extends Component {
 
   addStudent = () => {
     this.props.onShowModal()
-  } 
-  
+  }
+
   columns = [
     {
       title: '序号',
@@ -40,7 +40,8 @@ class STable extends Component {
         return (
           <span>
             <Button size="small" type="link" onClick={this.addStudent}>编辑</Button>
-            <Divider type="vertical" />
+            <Divider type="vertical" dashed />
+            <Divider dashed />
             <Button size="small" type="link">删除</Button>
           </span>
         )

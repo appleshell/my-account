@@ -11,4 +11,18 @@
     margin: 0 8px;
     vertical-align: middle;
   }
+  &--horizontal {
+    height: 1px;
+    width: 100%;
+    margin: 8px 0;
+  }
+  &--dashed {
+    background: none;
+    border-style: dashed;
+    border-color: #ccc;
+    border-width: 1px 0 0;
+    &-vertical {
+      border-width: 0 0 0 1px;
+    }
+  }
 }

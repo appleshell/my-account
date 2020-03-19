@@ -9,7 +9,7 @@ interface DividerProps {
 }
 
 const Divider: React.SFC<DividerProps> = props => {
-  const { type, className, dashed, ...restProps } = props
+  const { type = 'vertical', className, dashed, ...restProps } = props
   const prefixCls = 'x-divider'
 
   const classString = cn(
@@ -17,7 +17,8 @@ const Divider: React.SFC<DividerProps> = props => {
     prefixCls,
     `${prefixCls}--${type}`,
     {
-      [`${prefixCls}--dashed`]: !!dashed
+      [`${prefixCls}--dashed`]: !!dashed,
+      [`${prefixCls}--dashed-${type}`]: !!dashed
     }
   )
 
