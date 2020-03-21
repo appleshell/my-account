@@ -15,7 +15,7 @@ class App extends React.Component<IProps> {
   state = {
     collapsed: false,
   }
-  componentLists = ['Layout,布局', 'Button,按钮', 'Input,输入框', 'Divider,分割线', 'EmptyLine,空行']
+  componentLists = ['Layout,布局', 'Grid,网格', 'Button,按钮', 'Input,输入框', 'Divider,分割线', 'EmptyLine,空行']
   toggle = () => {
     this.setState({
       collapsed: !this.state.collapsed,
