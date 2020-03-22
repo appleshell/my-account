@@ -1,5 +1,6 @@
 import * as React from 'react'
 import cn from 'classnames'
+import './style.scss'
 import RowContext from './RowContext'
 
 interface RowProps extends React.HTMLAttributes<HTMLDivElement> {
@@ -30,8 +31,8 @@ export default class Row extends React.Component<RowProps> {
     const classString = cn(
       prefixCls,
       {
-        [`${prefixCls}--justify`]: justify,
-        [`${prefixCls}--align`]: align,
+        [`${prefixCls}--${justify}`]: justify,
+        [`${prefixCls}--${align}`]: align,
       },
       className,
     )
