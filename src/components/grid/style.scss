@@ -28,4 +28,9 @@
   &--bottom {
     align-items: flex-end;
   }
+  .x-col {
+    position: relative;
+    flex: 1 0 auto;
+    max-width: 100%;
+  }
 }

@@ -5,6 +5,8 @@ $buttonRadius: 4;
 $background: #fff; // layout 背景色
 $borderColor: rgb(235, 235, 238) !default; // input、cell的边的颜色
 
+$grid-columns: 24;
+
 @function px($px) {
   @return $px * 1px
 }
