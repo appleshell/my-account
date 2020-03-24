@@ -1,0 +1,51 @@
+@import '../style.scss';
+
+
+.x-row {
+  margin-bottom: 10px;;
+}
+.x-col {
+  text-align: center;
+  background: $demoColor;
+  color: #fff;
+  &:nth-of-type(2n+1) {
+    opacity: .8;
+  }
+}
+
+.grid-demo-gutter {
+  .x-col {
+    background: transparent;
+  }
+}
+
+.grid-demo-flex-justify {
+  .x-col {
+    padding: 8px 0;
+  }
+}
+
+.grid-demo-flex-align {
+  .x-col {
+    background: $demoColor;
+    padding: 8px 0;
+  }
+  .height-20 {
+    height: 20px;
+  }
+  .height-40 {
+    height: 40px;
+  }
+  .height-60 {
+    height: 60px;
+  }
+  .height-80 {
+    height: 80px;
+  }
+}
+
+.grid-demo-flex-order {
+  .x-col {
+    padding: 8px 0;
+  }
+}

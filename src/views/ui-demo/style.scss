@@ -1,3 +1,9 @@
+$demoColor: #63da55;
+$demoLightColor: #57ee47;
+
+
+
+
 .component-demo {
   h1 {
     font-size: 24px;
@@ -17,29 +23,19 @@
     .base-layout {
       height: 300px;
       .x-app--header {
-        background: #63da55;
+        background: $demoColor;
       }
       .x-app--main {
-        background: #57ee47;
+        background: $demoLightColor;
       }
       .x-app--footer {
-        background: #63da55;
+        background: $demoColor;
       }
     }
   }
   &-divider{
     .x-button {
       margin: 0;
-    }
-  }
-  .x-row {
-    margin-bottom: 10px;;
-  }
-  .x-col {
-    text-align: center;
-    color: #fff;
-    &:nth-of-type(2n+1) {
-      opacity: .8;
     }
   }
 }
