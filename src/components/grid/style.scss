@@ -2,8 +2,9 @@
 @import '../style/index.scss';
 
 $i: $grid-columns;
+$prefix: 'x';
 
-.x-row {
+.#{$prefix}-row {
   display: flex;
   flex-flow: row wrap;
   &--start {
@@ -30,7 +31,7 @@ $i: $grid-columns;
   &--bottom {
     align-items: flex-end;
   }
-  .x-col {
+  .#{$prefix}-col {
     position: relative;
     flex: 1 0 auto;
     max-width: 100%;
@@ -38,21 +39,21 @@ $i: $grid-columns;
 
   @while $i > -1 {
     @if $i > 0 {
-      .x-col--#{$i} {
+      .#{$prefix}-col--#{$i} {
           flex: 0 0 percentage($i / $grid-columns)
       }
-      .x-col--order-#{$i} {
+      .#{$prefix}-col--order-#{$i} {
         order: $i;
       }
     } @else {
-      .x-col--#{$i} {
+      .#{$prefix}-col--#{$i} {
           display: none;
       }
-      .x-col--order-#{$i} {
+      .#{$prefix}-col--order-#{$i} {
         order: $i;
       }
     }
     $i: $i - 1
   }
-  
+
 }
