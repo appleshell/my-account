@@ -1,6 +1,8 @@
 @charset "utf-8";
 @import '../style/index.scss';
 
+$i: $grid-columns;
+
 .x-row {
   display: flex;
   flex-flow: row wrap;
@@ -33,4 +35,24 @@
     flex: 1 0 auto;
     max-width: 100%;
   }
+
+  @while $i > -1 {
+    @if $i > 0 {
+      .x-col--#{$i} {
+          flex: 0 0 percentage($i / $grid-columns)
+      }
+      .x-col--order-#{$i} {
+        order: $i;
+      }
+    } @else {
+      .x-col--#{$i} {
+          display: none;
+      }
+      .x-col--order-#{$i} {
+        order: $i;
+      }
+    }
+    $i: $i - 1
+  }
+  
 }

@@ -1,7 +1,8 @@
 import React, {Component} from 'react';
 import {SortableContainer, SortableElement} from 'react-sortable-hoc';
 import arrayMove from 'array-move';
-import { Upload, Button, message, Icon } from 'antd'
+import { Upload, Button, message } from 'antd'
+import {CloseOutlined, UploadOutlined} from '@ant-design/icons'
 import './style.scss'
 
 const SortableItem = SortableElement(({value}) => <li className="sortName">{value}</li>);
@@ -37,7 +38,7 @@ class SortableComponent extends Component {
       <li className="sortName">
         <img style={{width: '100%'}} src={value.response.url} alt=""/>
         {index}
-        <Icon onClick={() => this.deleteImg(index)} className="close" type="close" />
+        <CloseOutlined onClick={() => this.deleteImg(index)} />
       </li>
     )
   });
@@ -93,7 +94,7 @@ class SortableComponent extends Component {
           showUploadList={false}
         >
           <Button>
-            <Icon type="upload" /> Click to Upload
+            <UploadOutlined /> Click to Upload
           </Button>
         </Upload>
       </div>

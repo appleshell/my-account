@@ -47,7 +47,12 @@ const Button: React.FC<IProps> = props => {
       onClick(evt)
     }
     return (
-      <button disabled={!!disabled} className={compseClassName} onClick={clickHandle} {...otherProps}>
+      <button
+        disabled={!!disabled}
+        className={compseClassName}
+        onClick={clickHandle}
+        {...otherProps}
+      >
         {loadingNode}
         {children}
       </button>

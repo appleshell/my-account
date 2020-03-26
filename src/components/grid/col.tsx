@@ -28,14 +28,18 @@ class Col extends React.Component<ColProps, {}> {
       ...ohterProps
     } = this.props
     const prefixCls = 'x-col'
-    const gridColumn = 24
-    const classString = cn(prefixCls, className)
+    const classString = cn(
+      prefixCls,
+      {
+        [`${prefixCls}--${span}`]: span,
+        [`${prefixCls}--order-${order}`]: order,
+      },
+      className,
+    )
     return (
       <RowContext.Consumer>
         {({ gutter }) => {
           let colStyle: React.CSSProperties = { ...style }
-          const flexStyle = span ? { flex: `0 0 ${(Number(span) / gridColumn) * 100}%` } : {}
-          const flexOrderStyle = order ? { order } : {}
           if (gutter) {
             const horiStyle = {
               paddingLeft: gutter[0]! / 2,
@@ -48,8 +52,6 @@ class Col extends React.Component<ColProps, {}> {
             colStyle = {
               ...(gutter[0]! > 0 ? horiStyle : {}),
               ...(gutter[1]! > 0 ? vertStyle : {}),
-              ...flexStyle,
-              ...flexOrderStyle,
               ...colStyle,
             }
           }

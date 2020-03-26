@@ -1,5 +1,6 @@
 import React from 'react'
-import { Layout, Menu, Icon } from 'antd'
+import { Layout, Menu } from 'antd'
+import { UserOutlined, MenuUnfoldOutlined, MenuFoldOutlined } from '@ant-design/icons'
 import './index.scss'
 import { History } from 'history'
 import SubRoutes from '../../router/subRoutes'
@@ -15,7 +16,14 @@ class App extends React.Component<IProps> {
   state = {
     collapsed: false,
   }
-  componentLists = ['Layout,布局', 'Grid,网格', 'Button,按钮', 'Input,输入框', 'Divider,分割线', 'EmptyLine,空行']
+  componentLists = [
+    'Layout,布局',
+    'Grid,网格',
+    'Button,按钮',
+    'Input,输入框',
+    'Divider,分割线',
+    'EmptyLine,空行',
+  ]
   toggle = () => {
     this.setState({
       collapsed: !this.state.collapsed,
@@ -35,15 +43,15 @@ class App extends React.Component<IProps> {
           </div>
           <Menu theme="light" mode="inline" onClick={this.onMenuHandle}>
             <Menu.Item key="student">
-              <Icon type="user" />
+              <UserOutlined />
               <span>nav 1</span>
             </Menu.Item>
             <Menu.Item key="sortable">
-              <Icon type="video-camera" />
+              <UserOutlined />
               <span>nav 2</span>
             </Menu.Item>
             <Menu.Item key="learn">
-              <Icon type="upload" />
+              <UserOutlined />
               <span>nav 3</span>
             </Menu.Item>
             <SubMenu key="com-ui" title="组件">
@@ -56,11 +64,11 @@ class App extends React.Component<IProps> {
         </Sider>
         <Layout>
           <Header>
-            <Icon
-              className="trigger"
-              type={this.state.collapsed ? 'menu-unfold' : 'menu-fold'}
-              onClick={this.toggle}
-            />
+            {this.state.collapsed ? (
+              <MenuUnfoldOutlined onClick={this.toggle} />
+            ) : (
+              <MenuFoldOutlined onClick={this.toggle} />
+            )}
             <Clock />
           </Header>
           <Content className="main-warpper">
