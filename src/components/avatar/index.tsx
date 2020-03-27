@@ -27,7 +27,7 @@ class Avatar extends React.Component<AvatarProps, AvatarState> {
   }
 
   render() {
-    const prefixCls = 'x-avator'
+    const prefixCls = 'x-avatar'
     const { shape, size, icon, src, srcSet, alt, className, style, ...otherProps } = this.props
 
     const classString = cn(
@@ -62,7 +62,9 @@ class Avatar extends React.Component<AvatarProps, AvatarState> {
     }
 
     return (
-    <span {...otherProps} className={classString} style={{...sizeStyle, ...style}}>{children}</span>
+      <span {...otherProps} className={classString} style={{ ...sizeStyle, ...style }}>
+        {children}
+      </span>
     )
   }
 }

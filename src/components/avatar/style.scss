@@ -1,2 +1,25 @@
 @charset "utf-8";
 @import '../style/index.scss';
+
+$prefix: 'x-avatar';
+$avatar-bg: #ccc;
+$avatar-size-base: 32px;
+
+.#{$prefix} {
+  position: relative;
+  display: inline-block;
+  white-space: nowrap;
+  overflow: hidden;
+  text-align: center;
+  background: $avatar-bg;
+  color: #fff;
+
+  width: $avatar-size-base;
+  height: $avatar-size-base;
+  line-height: $avatar-size-base;
+  border-radius: 50%;
+
+  &--square {
+    border-radius: 2px;
+  }
+}

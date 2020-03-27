@@ -10,6 +10,7 @@ import Layout from '../views/ui-demo/layout'
 import Input from '../views/ui-demo/input'
 import Divider from '../views/ui-demo/divider'
 import Grid from '../views/ui-demo/grid'
+import Avatar from '../views/ui-demo/avatar'
 
 const Routes = e => {
   return (
@@ -23,6 +24,7 @@ const Routes = e => {
       <Route exact path="/input" component={Input} />
       <Route exact path="/divider" component={Divider} />
       <Route exact path="/grid" component={Grid} />
+      <Route exact path="/avatar" component={Avatar} />
     </Switch>
   )
 }
