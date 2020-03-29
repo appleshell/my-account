@@ -48,7 +48,7 @@ class Avatar extends React.Component<AvatarProps, AvatarState> {
             height: size,
             width: size,
             lineHeight: `${size}px`,
-            fontSize: 18,
+            fontSize: icon ? (size / 2) : 18,
           }
         : {}
 
