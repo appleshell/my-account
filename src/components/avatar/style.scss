@@ -8,6 +8,10 @@ $avatar-size-base: 32px;
 $avatar-size-lg: 48px;
 $avatar-font-size-base: 18px;
 
+@mixin avatar-size($size, $font-size) {
+
+}
+
 .#{$prefix} {
   position: relative;
   display: inline-block;
