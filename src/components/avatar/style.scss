@@ -9,7 +9,12 @@ $avatar-size-lg: 48px;
 $avatar-font-size-base: 18px;
 
 @mixin avatar-size($size, $font-size) {
-
+  width: $size;
+  height: $size;
+  line-height: $size;
+  &--icon {
+    font-size: $font-size;
+  }
 }
 
 .#{$prefix} {
@@ -20,31 +25,24 @@ $avatar-font-size-base: 18px;
   text-align: center;
   background: $avatar-bg;
   color: #fff;
-
-  width: $avatar-size-base;
-  height: $avatar-size-base;
-  line-height: $avatar-size-base;
   border-radius: 50%;
+  font-size: 14px;
+
+  @include avatar-size($avatar-size-base, $avatar-font-size-base);
 
   &--square {
     border-radius: 2px;
   }
 
-  &--icon {
-    font-size: $avatar-font-size-base;
-  }
+  // &--icon {
+  //   font-size: $avatar-font-size-base;
+  // }
 
   &--lg {
-    font-size: 20px;
-    width: $avatar-size-lg;
-    height: $avatar-size-lg;
-    line-height: $avatar-size-lg;
+    @include avatar-size($avatar-size-lg, 22px);
   }
 
   &--sm {
-    font-size: 14px;
-    width: $avatar-size-sm;
-    height: $avatar-size-sm;
-    line-height: $avatar-size-sm;
+    @include avatar-size($avatar-size-sm, 14px);
   }
 }
