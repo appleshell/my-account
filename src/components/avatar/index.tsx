@@ -22,12 +22,40 @@ interface AvatarState {
 
 class Avatar extends React.Component<AvatarProps, AvatarState> {
   static defaultProps = {
-    shape: 'circle' as AvatarProps,
-    size: 'default' as AvatarProps,
+    shape: 'circle' as AvatarProps['shape'],
+    size: 'default' as AvatarProps['size'],
+  }
+
+  state = {
+    scale: 1,
+    mounted: false,
+    isImgExist: false
+  }
+
+  private avatarNode!: HTMLElement;
+
+  private avatarChildren!: HTMLElement;
+
+  componentDidMount() {
+    this.setScale()
+  }
+
+  // componentDidUpdate() {
+  //   this.setScale()
+  // }
+
+  setScale = () => {
+    if(!this.avatarNode || !this.avatarChildren) return;
+    const nodeWidth = this.avatarNode.offsetWidth;
+    const childrenNodeWidth = this.avatarChildren.offsetWidth;
+    this.setState({
+      scale: nodeWidth - 8 < childrenNodeWidth ? (nodeWidth - 8) / childrenNodeWidth : 1
+    })
   }
 
   render() {
     const prefixCls = 'x-avatar'
+    const { scale } = this.state
     const { shape, size, icon, src, srcSet, alt, className, style, ...otherProps } = this.props
 
     const classString = cn(
@@ -60,11 +88,18 @@ class Avatar extends React.Component<AvatarProps, AvatarState> {
     } else if (icon) {
       children = icon
     } else {
-      children = <span className={`${prefixCls}--string`}>{children}</span>
+      const trans = `scale(${scale}) translateX(-50%)`
+      const childrenStyle: React.CSSProperties = {transform: trans}
+      children = <span className={`${prefixCls}--string`} style={childrenStyle} ref={(node: HTMLElement) => this.avatarChildren = node}>{children}</span>
     }
 
     return (
-      <span {...otherProps} className={classString} style={{ ...sizeStyle, ...style }}>
+      <span
+        {...otherProps}
+        className={classString}
+        style={{ ...sizeStyle, ...style }}
+        ref={(node: HTMLElement) => this.avatarNode = node}
+      >
         {children}
       </span>
     )

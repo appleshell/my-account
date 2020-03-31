@@ -43,4 +43,20 @@ $avatar-font-size-sm: 14px;
   &--sm {
     @include avatar-size($avatar-size-sm, $avatar-font-size-sm);
   }
+
+  &--image {
+    background: transparent;
+  }
+
+  & > img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  &--string {
+    position: absolute;
+    left: 50%;
+    transform-origin: 0 center;
+  }
 }

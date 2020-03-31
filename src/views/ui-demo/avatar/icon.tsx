@@ -11,6 +11,8 @@ const Demo: React.SFC = () => (
     <Avatar size="large" icon={<UserOutlined/>} />
     <Avatar icon={<UserOutlined/>} />
     <Avatar size="small" icon={<UserOutlined/>} />
+    <Avatar src="https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png" />
+    <Avatar style={{background: 'orange'}}>Tomson</Avatar>
   </div>
 )
 
