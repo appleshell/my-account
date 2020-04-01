@@ -9,7 +9,7 @@ class Learn extends React.Component {
         <RippleButton onClick={e => console.log(e)}>Click me</RippleButton>
         <Avatar size={64}>M</Avatar>
         <Avatar size={100}>M</Avatar>
-        <Avatar size={20}>M</Avatar>
+        <Avatar size={30}>M</Avatar>
         <Avatar size="large">M</Avatar>
       </div>
     )

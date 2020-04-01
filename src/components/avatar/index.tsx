@@ -66,8 +66,6 @@ class Avatar extends React.Component<AvatarProps, AvatarState> {
         [`${prefixCls}--${shape}`]: shape,
         [`${prefixCls}--image`]: src,
         [`${prefixCls}--icon`]: icon,
-        // [`${prefixCls}--lg--icon`]: size === 'large' && icon,
-        // [`${prefixCls}--sm--icon`]: size === 'small' && icon,
       },
       className,
     )
