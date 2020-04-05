@@ -10,9 +10,13 @@ $warning-color: #faad14;
   &-status {
     &-dot {
       display: inline-block;
-      width: 10px;
-      height: 10px;;
+      width: 6px;
+      height: 6px;;
       border-radius: 50%;
+    }
+    &-text {
+      margin-left: 8px;
+      font-size: 14px;
     }
     &-default {
       background-color: $normal-color;
