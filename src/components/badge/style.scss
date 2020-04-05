@@ -1,0 +1,33 @@
+$prefix: 'x-badge';
+$normal-color: #d9d9d9;
+$success-color: #52c41a;
+$processing-color: #1890ff;
+$error-color: #ff4d4f;
+$warning-color: #faad14;
+
+
+.#{$prefix} {
+  &-status {
+    &-dot {
+      display: inline-block;
+      width: 10px;
+      height: 10px;;
+      border-radius: 50%;
+    }
+    &-default {
+      background-color: $normal-color;
+    }
+    &-success {
+      background-color: $success-color;
+    }
+    &-processing {
+      background-color: $success-color;
+    }
+    &-error {
+      background-color: $error-color;
+    }
+    &-warning {
+      background-color: $warning-color;
+    }
+  }
+}

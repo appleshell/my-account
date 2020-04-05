@@ -23,6 +23,7 @@ class App extends React.Component<IProps> {
     'Input,输入框',
     'Divider,分割线',
     'Avatar,头像',
+    'badge,徽标',
     'EmptyLine,空行',
   ]
   toggle = () => {

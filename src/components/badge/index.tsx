@@ -4,7 +4,7 @@ import cn from 'classnames'
 
 export interface BadgeProps {
   count?: React.ReactNode;
-  status?: string
+  status?: 'success' | 'processing' | 'default' | 'error' | 'warning'
   color?: string
   text?: string
   className?: string
@@ -21,7 +21,7 @@ class Badge extends React.Component<BadgeProps, any> {
   }
   render() {
     const prefixCls = 'x-badge'
-    const { status, color, text, className } = this.props
+    const { status, color, text } = this.props
     const statusCls = cn({
       [`${prefixCls}-status-dot`]: this.hasStatus(),
       [`${prefixCls}-status-${status}`]: !!status,
