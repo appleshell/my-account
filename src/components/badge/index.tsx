@@ -56,9 +56,9 @@ class Badge extends React.Component<BadgeProps, any> {
     return (
       <span className={this.getBadgeCls(prefixCls)}>
         {children}
-        <sup className={countClassStrings}>
+        <span className={countClassStrings}>
           {count}
-        </sup>
+        </span>
       </span>
     )
   }
