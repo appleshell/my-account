@@ -4,29 +4,44 @@ $success-color: #52c41a;
 $processing-color: #1890ff;
 $error-color: #ff4d4f;
 $warning-color: #faad14;
+$dot-size: 6px;
 
 
 .#{$prefix} {
   display: inline-block;
   vertical-align: middle;
+  position: relative;
   &-count {
     display: inline-block;
     min-width: 20px;
     height: 20px;
     background: red;
     border-radius: 10px;
-    padding: 0 8px;
+    padding: 0 6px;
     line-height: 20px;
     text-align: center;
     font-size: 12px;
     font-weight: 400;
     color: #fff;
   }
+  &-dot {
+    width: $dot-size;
+    height: $dot-size;
+    border-radius: 50%;
+    background: red;
+  }
+  &-count,
+  &-dot {
+    position: absolute;
+    top: 0;
+    right: 0;
+    transform: translate(50%,-50%);
+  }
   &-status {
     &-dot {
       display: inline-block;
-      width: 6px;
-      height: 6px;;
+      width: $dot-size;
+      height: $dot-size;
       border-radius: 50%;
     }
     &-text {
@@ -48,5 +63,9 @@ $warning-color: #faad14;
     &-warning {
       background-color: $warning-color;
     }
+  }
+  &-not-a-wrapper {
+    position: relative;
+    transform: none;
   }
 }

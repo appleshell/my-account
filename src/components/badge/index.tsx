@@ -8,10 +8,24 @@ export interface BadgeProps {
   color?: string
   text?: string
   dot?: boolean
+  showZero?: boolean
+  overflowCount?: number
   className?: string
 }
 
 class Badge extends React.Component<BadgeProps, any> {
+  static defaultProps = {
+    overflowCount: 99
+  }
+
+  getDiplayCount = () => {
+    const { overflowCount, count } = this.props
+    const isDot = this.isDot()
+    if(isDot) return ''
+    console.log(overflowCount, count)
+    return (count as number) > (overflowCount as number) ? `${overflowCount}+` : count
+  }
+
   hasStatus = (): boolean => {
     const { status, color } = this.props
     return !!status || !!color
@@ -33,9 +47,17 @@ class Badge extends React.Component<BadgeProps, any> {
     return (dot && !isZero) || this.hasStatus()
   }
 
+  isHidden = () => {
+    const { showZero, count } = this.props
+    const isDot = this.isDot()
+    const isZero = this.isZero()
+    const isEmpty = count === null || count === undefined || count === ''
+    return (isEmpty || (isZero && !showZero)) && !isDot
+  }
+
   render() {
     const prefixCls = 'x-badge'
-    const { status, color, text, children, count } = this.props
+    const { status, color, text, children } = this.props
     const statusCls = cn({
       [`${prefixCls}-status-dot`]: this.hasStatus(),
       [`${prefixCls}-status-${status}`]: !!status,
@@ -51,14 +73,18 @@ class Badge extends React.Component<BadgeProps, any> {
       </span>
     }
     const countClassStrings = cn({
-      [`${prefixCls}-count`]: !this.isDot()
+      [`${prefixCls}-count`]: !this.isDot(),
+      [`${prefixCls}-dot`]: this.isDot(),
+      [`${prefixCls}-not-a-wrapper`]: !children
     })
+    const isHidden = this.isHidden()
+    const displayCount = this.getDiplayCount()
     return (
       <span className={this.getBadgeCls(prefixCls)}>
         {children}
-        <span className={countClassStrings}>
-          {count}
-        </span>
+        {!isHidden && <span className={countClassStrings}>
+          {displayCount}
+        </span>}
       </span>
     )
   }

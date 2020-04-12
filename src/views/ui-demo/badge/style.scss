@@ -1,5 +1,20 @@
 @import '../style.scss';
 
+.badge-demo-basic {
+  .x-badge {
+    margin-right: 12px;
+    margin-bottom: 10px;
+  }
+  .content-demo {
+    width: 48px;
+    height: 48px;;
+    display: inline-block;
+    background: #eeeeee;
+    border-radius: 2px;
+    vertical-align: middle;
+  }
+}
+
 .badge-demo-dot {
   .x-badge {
     margin-right: 12px;
