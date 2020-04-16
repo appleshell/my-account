@@ -12,6 +12,7 @@ import Divider from '../views/ui-demo/divider'
 import Grid from '../views/ui-demo/grid'
 import Avatar from '../views/ui-demo/avatar'
 import Badge from '../views/ui-demo/badge'
+import Comment from '../views/ui-demo/comment'
 
 const Routes = e => {
   return (
@@ -27,6 +28,7 @@ const Routes = e => {
       <Route exact path="/grid" component={Grid} />
       <Route exact path="/avatar" component={Avatar} />
       <Route exact path="/badge" component={Badge} />
+      <Route exact path="/comment" component={Comment} />
     </Switch>
   )
 }

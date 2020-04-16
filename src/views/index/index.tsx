@@ -24,6 +24,7 @@ class App extends React.Component<IProps> {
     'Divider,分割线',
     'Avatar,头像',
     'badge,徽标',
+    'comment,评论',
     'EmptyLine,空行',
   ]
   toggle = () => {
