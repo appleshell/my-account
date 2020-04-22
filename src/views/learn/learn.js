@@ -3,6 +3,7 @@ import React from 'react'
 import { Button, Table, Input } from 'antd'
 import axios from 'axios'
 import dayjs from 'dayjs'
+import qs from 'qs'
 
 class Learn extends React.Component {
   state = {
@@ -10,6 +11,16 @@ class Learn extends React.Component {
     dataList: [],
     tableData: [],
   }
+
+  decode = (str) => {
+    return decodeURIComponent(str);
+  }
+
+  componentDidMount() {
+    const search = window.location.search.replace(/^\?/, '')
+    qs.parse(search, { decoder: this.decode })
+  }
+
   getDate = () => {
     console.log('sdfds')
     axios.get('https://dashboards-dev.sprinklr.com/data/9043/global-covid19-who-gis.json')
