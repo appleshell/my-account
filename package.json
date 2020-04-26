@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@sentry/browser": "^5.15.5",
     "@types/history": "^4.7.5",
     "antd": "^4.0.4",
     "array-move": "^2.1.0",
