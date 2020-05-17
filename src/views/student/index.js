@@ -7,7 +7,7 @@ const {Option} = Select
 const {TextArea} = Input
 
 class Student extends Component {
-  
+
   state = {visible:false}
 
   addStudent = () => {
@@ -20,7 +20,15 @@ class Student extends Component {
     this.setState({visible:false})
   }
 
+  handleSubmit = (values) => {
+    console.log(values)
+  }
+
   addModal(){
+    const layout = {
+      labelCol: { span: 4 },
+      wrapperCol: { span: 20 }
+    }
     return (
       <Modal
         title="新增学生"
@@ -32,17 +40,17 @@ class Student extends Component {
 
         ]}
       >
-        <Form>
-          <Form.Item>
+        <Form {...layout} onFinish={this.handleSubmit}>
+          <Form.Item label="学生姓名" name="name">
             <Input placeholder="请输入学生姓名"/>
           </Form.Item>
-          <Form.Item>
-            <Select placeholder="请输入学生姓名">
-              <Option value="girl">女</Option>
-              <Option value="boy">男</Option>
+          <Form.Item label="性别" name="sex">
+            <Select placeholder="请选择性别">
+              <Option value="0">女</Option>
+              <Option value="1">男</Option>
             </Select>
           </Form.Item>
-          <Form.Item>
+          <Form.Item label="备注" name="remark">
             <TextArea placeholder="请输入备注"/>
           </Form.Item>
         </Form>

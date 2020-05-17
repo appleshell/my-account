@@ -1,7 +1,15 @@
 import React, {Component} from 'react'
-import {Table, Divider, Button} from 'antd'
+import {Table, Button} from 'antd'
+import axios from 'axios'
 
 class STable extends Component {
+  state = {
+    dataList: []
+  }
+
+  componentDidMount() {
+    this.getData()
+  }
 
   addStudent = () => {
     this.props.onShowModal()
@@ -40,9 +48,9 @@ class STable extends Component {
         return (
           <span>
             <Button size="small" type="link" onClick={this.addStudent}>编辑</Button>
-            <Divider type="vertical" dashed />
+            {/* <Divider type="vertical" dashed />
             <Divider dashed />
-            <Button size="small" type="link">删除</Button>
+            <Button size="small" type="link">删除</Button> */}
           </span>
         )
       }
@@ -72,8 +80,17 @@ class STable extends Component {
     },
   ]
 
+  getData = async () => {
+    const res = await axios.get('/user/get')
+    console.log(res)
+    const { data: {data: list}} = res
+    this.setState({
+      dataList: list.list
+    })
+  }
+
   render() {
-    return <Table columns={this.columns} dataSource={this.data} />
+    return <Table columns={this.columns} dataSource={this.state.dataList} />
   }
 
 }

@@ -6,8 +6,6 @@ import Routes from './router'
 import './assets/style/index.css';
 import './assets/style/reset.css'
 
-
-
 ReactDOM.render(
     <ConfigProvider locale={zh_CN}>
       <Routes/>

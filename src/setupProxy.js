@@ -2,10 +2,13 @@ const { createProxyMiddleware } = require('http-proxy-middleware');
 
 module.exports = function(app) {
   app.use(
-    '/data',
+    '/user',
     createProxyMiddleware({
-      target: 'https://dashboards-dev.sprinklr.com',
+      target: 'http://127.0.0.1:7001',
       changeOrigin: true,
+      router: {
+        '/data': 'https://dashboards-dev.sprinklr.com'
+      }
     })
   )
 }
