@@ -1,4 +1,5 @@
-import React, {Component} from 'react'
+import React from 'react'
+import Event from './event'
 import {Form, Input, Button, Modal, Select} from 'antd'
 import STable from './component/sTable'
 import Search from './component/search'
@@ -6,23 +7,8 @@ import './style.css'
 const {Option} = Select
 const {TextArea} = Input
 
-class Student extends Component {
-
-  state = {visible:false}
-
-  addStudent = () => {
-    this.setState({visible:true})
-  }
-  handleOk = () => {
-    this.setState({visible:false})
-  }
-  handleCancel = () => {
-    this.setState({visible:false})
-  }
-
-  handleSubmit = (values) => {
-    console.log(values)
-  }
+class Student extends Event {
+  formRef = React.createRef()
 
   addModal(){
     const layout = {
@@ -33,14 +19,10 @@ class Student extends Component {
       <Modal
         title="新增学生"
         visible={this.state.visible}
-        onOk={this.handleOk}
+        onOk={this.handleSubmit}
         onCancel={this.handleCancel}
-        footer={[
-          <Button>取消</Button>,
-
-        ]}
       >
-        <Form {...layout} onFinish={this.handleSubmit}>
+        <Form ref={this.formRef} {...layout} onFinish={this.handleSubmit}>
           <Form.Item label="学生姓名" name="name">
             <Input placeholder="请输入学生姓名"/>
           </Form.Item>
