@@ -45,10 +45,16 @@ class Aside extends React.PureComponent<IProps> {
               <UserOutlined />
               <span>nav 2</span>
             </Menu.Item>
-            <Menu.Item key="learn">
-              <UserOutlined />
-              <span>nav 3</span>
-            </Menu.Item>
+            <SubMenu key="covid" title="疫情">
+              <Menu.Item key="covid">
+                <UserOutlined />
+                <span>疫情数据</span>
+              </Menu.Item>
+              <Menu.Item key="country">
+                <UserOutlined />
+                <span>国家</span>
+              </Menu.Item>
+            </SubMenu>
             <SubMenu key="com-ui" title="组件">
               {this.componentLists.map(item => {
                 const comInfo = item.split(',')
