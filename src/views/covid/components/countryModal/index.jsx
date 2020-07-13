@@ -1,6 +1,8 @@
 import React from 'react'
-import { Modal } from 'antd'
+import { Modal, Form, Input } from 'antd'
 import './style.scss'
+
+const FormItem = Form.Item
 
 const CountryModal = props => {
   const { isEdit, visible, confirm } = props
@@ -14,7 +16,13 @@ const CountryModal = props => {
       title={isEdit ? '新增国家' : '编辑国家'}
       visible={visible}
       onOk={handleOk}
-    ></Modal>
+    >
+      <Form>
+        <FormItem lable="国家名称" name="country">
+          <Input placeholder="请输入" />
+        </FormItem>
+      </Form>
+    </Modal>
   )
 }
 
