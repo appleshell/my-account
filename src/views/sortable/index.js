@@ -1,13 +1,16 @@
-import React, {Component} from 'react';
-import {SortableContainer, SortableElement} from 'react-sortable-hoc';
+import React, { Component } from 'react';
+import { SortableContainer, SortableElement } from 'react-sortable-hoc';
 import arrayMove from 'array-move';
 import { Upload, Button, message } from 'antd'
-import {CloseOutlined, UploadOutlined} from '@ant-design/icons'
+import { CloseOutlined, UploadOutlined } from '@ant-design/icons'
+import { AsyncButton, RowItem } from 'my-component-doc'
 import './style.scss'
 
-const SortableItem = SortableElement(({value}) => <li className="sortName">{value}</li>);
+import test from './test'
 
-const SortableList = SortableContainer(({items}) => {
+const SortableItem = SortableElement(({ value }) => <li className="sortName">{value}</li>);
+
+const SortableList = SortableContainer(({ items }) => {
   return (
     <ul>
       {items.map((value, index) => (
@@ -20,30 +23,30 @@ const SortableList = SortableContainer(({items}) => {
 class SortableComponent extends Component {
   state = {
     items: ['Item 1', 'Item 2', 'Item 3', 'Item 4', 'Item 5', 'Item 6'],
-    imgList:[]
+    imgList: []
   }
 
   deleteImg = (index) => {
     let array = this.state.imgList;
     let newArray = [...array];
     console.log(index)
-    newArray.splice(index,1)
+    newArray.splice(index, 1)
     this.setState({
-      imgList:[...newArray]
+      imgList: [...newArray]
     })
   }
 
-  SortableItem1 = SortableElement(({value, index}) => {
+  SortableItem1 = SortableElement(({ value, index }) => {
     return (
       <li className="sortName">
-        <img style={{width: '100%'}} src={value.response.url} alt=""/>
+        <img style={{ width: '100%' }} src={value.response.url} alt="" />
         {index}
         <CloseOutlined onClick={() => this.deleteImg(index)} />
       </li>
     )
   });
-  
-  SortableList1 = SortableContainer(({items}) => {
+
+  SortableList1 = SortableContainer(({ items }) => {
     return (
       <ul>
         {items.map((value, index) => {
@@ -52,16 +55,16 @@ class SortableComponent extends Component {
       </ul>
     );
   });
-  
-  
-  onSortEnd = ({oldIndex, newIndex}) => {
-    this.setState(({items}) => ({
+
+
+  onSortEnd = ({ oldIndex, newIndex }) => {
+    this.setState(({ items }) => ({
       items: arrayMove(items, oldIndex, newIndex),
     }));
-    console.log(this.state.items)
+    console.log(this.state.items.name.ss)
   }
-  onSortEnd1 = ({oldIndex, newIndex}) => {
-    this.setState(({imgList}) => ({
+  onSortEnd1 = ({ oldIndex, newIndex }) => {
+    this.setState(({ imgList }) => ({
       imgList: arrayMove(imgList, oldIndex, newIndex),
     }));
     console.log(this.state.imgList)
@@ -97,6 +100,13 @@ class SortableComponent extends Component {
             <UploadOutlined /> Click to Upload
           </Button>
         </Upload>
+        <AsyncButton onClick={() => new Promise(resolve => setTimeout(resolve, 1500))}>click</AsyncButton>
+        <RowItem label="时间：" showBorder>
+          <span>2020-02-22 22:22:23</span>
+        </RowItem>
+        <RowItem label="内容标题：" showBorder>
+          <div>这里可以写任何内容</div>
+        </RowItem>
       </div>
     )
   }
