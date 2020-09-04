@@ -6,8 +6,6 @@ import { CloseOutlined, UploadOutlined } from '@ant-design/icons'
 import { AsyncButton, RowItem } from 'my-component-doc'
 import './style.scss'
 
-import test from './test'
-
 const SortableItem = SortableElement(({ value }) => <li className="sortName">{value}</li>);
 
 const SortableList = SortableContainer(({ items }) => {

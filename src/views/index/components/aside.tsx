@@ -45,6 +45,10 @@ class Aside extends React.PureComponent<IProps> {
               <UserOutlined />
               <span>nav 2</span>
             </Menu.Item>
+            <Menu.Item key="todo">
+              <UserOutlined />
+              <span>Todo</span>
+            </Menu.Item>
             <SubMenu key="covid" title="疫情">
               <Menu.Item key="covid">
                 <UserOutlined />

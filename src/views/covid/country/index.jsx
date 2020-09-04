@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React, { useState } from 'react'
 import { Table, Layout, Button } from 'antd'
 import CountryModal from '../components/countryModal'
 import './style.scss'

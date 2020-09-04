@@ -1,6 +1,6 @@
 import React from 'react'
 import Event from './event'
-import {Form, Input, Button, Modal, Select} from 'antd'
+import {Form, Input, Modal, Select} from 'antd'
 import STable from './component/sTable'
 import Search from './component/search'
 import './style.css'

@@ -5,6 +5,7 @@ import Student from '../views/student'
 import Sortable from '../views/sortable'
 import Covid from '../views/covid'
 import Country from '../views/covid/country'
+import Todo from '../views/todo'
 import EmptyLine from '../views/ui-demo/empty_line'
 import Button from '../views/ui-demo/button'
 import Layout from '../views/ui-demo/layout'
@@ -22,6 +23,7 @@ const Routes = e => {
       <Route exact path="/sortable" component={Sortable} />
       <Route exact path="/covid" component={Covid} />
       <Route exact path="/country" component={Country} />
+      <Route exact path="/todo" component={Todo} />
       <Route exact path="/emptyLine" component={EmptyLine} />
       <Route exact path="/button" component={Button} />
       <Route exact path="/layout" component={Layout} />
