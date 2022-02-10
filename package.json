@@ -13,7 +13,7 @@
     "http-proxy-middleware": "^1.0.3",
     "moment": "^2.24.0",
     "my-component-doc": "^1.0.6",
-    "node-sass": "^4.12.0",
+    "node-sass": "^7.0.0",
     "omit.js": "^1.0.2",
     "qs": "^6.9.3",
     "react": "^16.13.1",
