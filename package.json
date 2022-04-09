@@ -11,7 +11,7 @@
     "classnames": "^2.2.6",
     "dayjs": "^1.8.24",
     "http-proxy-middleware": "^1.0.3",
-    "moment": "^2.24.0",
+    "moment": "^2.29.2",
     "my-component-doc": "^1.0.6",
     "node-sass": "^4.12.0",
     "omit.js": "^1.0.2",
